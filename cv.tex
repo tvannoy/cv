@@ -1,0 +1,203 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+% cv style/page setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\documentclass[11pt,letterpaper,roman,english]{moderncv}
+
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{babel}
+
+\moderncvstyle{classic}
+
+% use my custom styles
+\moderncvcolor{gold}
+\moderncvhead{7}
+
+% adjust date column width
+\setlength{\hintscolumnwidth}{3.5cm}
+
+% prevent page numbering from disappearing in classic style
+\usepackage{lastpage}
+\fancyfoot[r]{\sffamily\itshape\textcolor{color2!40}{\thepage/\pageref{LastPage}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+% font setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\usepackage{fontawesome5}
+\usepackage{sourcesanspro}
+\usepackage{sourceserifpro}
+\usepackage{sourcecodepro}
+\renewcommand*{\sectionfont}{\sffamily\LARGE\mdseries\scshape}
+\renewcommand*{\namefont}{\sffamily\fontsize{38}{40}\mdseries\upshape}
+\renewcommand*{\addressfont}{\sffamily\mdseries\itshape}
+
+% change icons
+\renewcommand*{\addresssymbol}{~\faIcon[solid]{address-book}}
+\renewcommand*{\mobilephonesymbol}{~\faIcon[regular]{phone}}
+\renewcommand*{\emailsymbol}{~\faIcon[solid]{envelope}}
+\renewcommand*{\githubsocialsymbol}{~\faIcon{github}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+% bibliography setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\usepackage[style=numeric, maxnames=3, minnames=2, sorting=ymdnt]{biblatex}
+\addbibresource{publications.bib}
+\DeclareFieldFormat{labelnumberwidth}{}
+\setlength{\biblabelsep}{0pt}
+
+% bibliography sorting
+\DeclareSortingTemplate{ymdnt}{
+  \sort{
+    \field{presort}
+  }
+  \sort[final]{
+    \field{sortkey}
+  }
+  \sort{
+    \field{sortyear}
+    \field{sortname}
+    \field{author}
+    \field{editor}
+    \field{translator}
+    \field{sorttitle}
+    \field{title}
+  }
+  \sort[direction=descending]{
+    \field{sortyear}
+    \field{year}
+    \literal{9999}
+  }
+  \sort[direction=descending]{
+    \field[padside=left,padwidth=2,padchar=0]{month}
+    \literal{99}
+  }
+  \sort[direction=descending]{
+    \field[padside=left,padwidth=2,padchar=0]{day}
+    \literal{99}
+  }
+  \sort{
+      \field{sortname}
+      \field{author}
+  }
+  \sort{
+    \field{sorttitle}
+  }
+}
+
+% make my author name bold
+\renewcommand*{\mkbibnamegiven}[1]{%
+\ifitemannotation{highlight}
+{\textbf{#1}}
+{#1}}
+
+\renewcommand*{\mkbibnamefamily}[1]{%
+\ifitemannotation{highlight}
+{\textbf{#1}}
+{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+% personal data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\firstname{Trevor}
+\familyname{Vannoy}
+%\title{}
+%\address{}{}{}
+%\mobile{}
+%\phone{phone number}
+%\fax{fax number}
+\email{vannoy.trevor@gmail.com}
+\social[github]{tvannoy}
+%\extrainfo{additional information}
+% \photo[64pt][0.4pt]{picture}
+%\quote{some quote}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+% the cv
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\begin{document}
+\makecvtitle
+
+
+\section{Education}
+
+\cventry{Aug 2017\,--\,Present}{PhD Electrical Engineering}{Montana State University}{Bozeman, MT}{}{}
+
+\cventry{Aug 2017\,--\,Present}{M.S Electrical Engineering}{Montana State University}{Bozeman, MT}{}{Thesis: \emph{Enabling Rapid Prototyping of Audio Signal Processing Systems using System-on-Chip Field Programmable Gate Arrays}}
+
+\cventry{Aug 2012\,--\,May 2016}{B.S. Electrical Engineering}{Montana State University}{Bozeman, MT}{}{Computer Engineering minor, 4.0 GPA, Highest Honors}
+
+
+\section{Research Experience}
+
+\cventry{Aug 2017\,--\,May 2019}{Graduate Research Assistant}{Montana State University}{Bozeman, MT}{}{}
+\cvlistitem{Development of an Open FPGA-based Speech Processing Platform}
+
+\cventry{Aug 2015\,--\,May 2016}{Undergrad Research Assistant}{Montana State University}{Bozeman, MT}{}{}
+\cvlistitem{Development of an FPGA Platform for Automating Laboratory Equipment}
+
+\cventry{June\,--\,Aug 2015}{Lee Teng Research Intern}{Argonne National Lab}{Lemont, IL}{}{}
+\cvlistitem{Control system modeling and stability analysis of an adaptive noise suppression system for the Advanced Photon Source particle accelerator}
+
+
+\section{Work Experience}
+
+\cventry{May 2019\,--\,Present}{Engineer}{Flat Earth Inc.}{Bozeman, MT}{}{}
+\cvlistitem{SoC FPGA and microcontroller development}
+\cvlistitem{Audio and radar signal processing}
+\cvlistitem{Linux server administration}
+
+\cventry{June 2016\,--\,July 2017}{Embedded Software Engineer}{Fluke Calibration}{Everett, WA}{}{}
+\cvlistitem{Developed a graphical application in Python to aid hardware bring-up}
+\cvlistitem{Designed and wrote firmware for a multifunction electrical calibrator}
+
+\cventry{May\,--\,Aug 2014}{Engineering Intern}{Western Area Power Administration}{Billings, MT}{}{}
+\cvlistitem{Developed statistical data analysis software in Microsoft Excel VBA and Python to compare power system model parameters with historical data}
+
+
+
+\section{Teaching Experience}
+
+\cventry{Aug 2018\,--\,Present}{Graduate Teaching Assistant}{Montana State University}{Bozeman, MT}{}{}
+\cvlistdoubleitem{SoC FPGAs I}{Digital Signal Processing}
+\cvlistdoubleitem{SoC FPGA II}{Circuits II}
+
+\cventry{Aug 2015\,--\,May 2016}{Undergrad Teaching Assistant}{Montana State University}{Bozeman, MT}{}{}
+\cvlistitem{Introduction to Electrical Engineering}
+
+
+% publications
+\nocite{*}
+\printbibliography[title=Publications]
+
+
+\section{Service}
+\cvitem{2019\,--\,2020}{Senior Design team advisor}
+\cvitem{2020\,--\,2018, 2016}{Montana FIRST LEGO League Robotics volunteer}
+\cvitem{2019, 2018}{Montana Science Olympiad event captain}
+\cvitem{2018}{Presenter for Belgrade Library's youth summer program}
+\cvitem{2018}{Mentor for Belgrade Library's Google CS-First program}
+\cvitem{2020, 2018}{Montana State University Family Science Night volunteer}
+\cvitem{2017}{Montana Science Olympiad volunteer}
+
+\section{Honors and Awards}
+\cvitem{2019}{Outstanding Teaching Assistant of the year}
+\cvitem{2017}{College of Engineering Benjamin Fellowship}
+\cvitem{2016}{Top Student in Electrical Engineering}
+\cvitem{2016}{Outstanding Senior in Electrical and Computer Engineering}
+\cvitem{2015}{Outstanding Junior in Electrical and Computer Engineering}
+\cvitem{2015}{Kathryn S. \& Walter L. Titus Jr. Memorial Scholarship}
+\cvitem{2014, 2013}{Len G. Robbins Memorial Scholarship}
+\cvitem{2013}{NorthWestern Energy Community Works Scholarship}
+\cvitem{2012}{Montana University System Honors Scholarship}
+
+
+\section{Skills}
+\cvdoubleitem{\textbf{Programming Languages}}{MATLAB, Python, VHDL, C, C++}{\textbf{PCB Design}}{KiCad, Eagle}
+\cvdoubleitem{\textbf{FPGA Tools}}{Intel Quartus}{}{}
+
+
+\end{document}
