@@ -28,6 +28,7 @@
 \usepackage{sourcesanspro}
 \usepackage{sourceserifpro}
 \usepackage{sourcecodepro}
+\usepackage{academicons}
 \renewcommand*{\sectionfont}{\sffamily\LARGE\mdseries\scshape}
 \renewcommand*{\namefont}{\sffamily\fontsize{38}{40}\mdseries\upshape}
 \renewcommand*{\addressfont}{\sffamily\mdseries\itshape}
@@ -42,10 +43,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 % bibliography setup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-\usepackage[style=numeric, maxnames=3, minnames=2, sorting=ymdnt]{biblatex}
+\usepackage[style=numeric, maxnames=99, minnames=2, sorting=ymdnt]{biblatex}
 \addbibresource{publications.bib}
 \DeclareFieldFormat{labelnumberwidth}{}
 \setlength{\biblabelsep}{0pt}
+
+% set up publication categories
+\DeclareBibliographyCategory{conference-publications}
+\DeclareBibliographyCategory{conference-abstracts}
+\addtocategory{conference-publications}{vannoy2019open, vannoy2019improved, vannoy2020design}
+\addtocategory{conference-abstracts}{snider2019real, snider2020implementing, blunt2020real}
 
 % bibliography sorting
 \DeclareSortingTemplate{ymdnt}{
@@ -97,10 +104,68 @@
 {\textbf{#1}}
 {#1}}
 
+% always show my name
+% taken from https://tex.stackexchange.com/questions/341313/biblatex-always-show-a-specific-author
+% \newcounter{namesnotimportant}
+% \newtoggle{ellipsis}
+% \DeclareNameFormat{given-family-etal}{%
+%   \ifnumcomp{\value{listcount}}{=}{1}
+%     {\setcounter{namesnotimportant}{0}%
+%      \global\toggletrue{ellipsis}}
+%     {}%
+%   \ifboolexpr{test {\ifnumcomp{\value{listcount}}{=}{1}}
+%               or test {\ifnumcomp{\value{listtotal}}{=}{2}}}
+%     {\ifgiveninits
+%       {\usebibmacro{name:given-family}
+%          {\namepartfamily}
+%          {\namepartgiveni}
+%          {\namepartprefix}
+%          {\namepartsuffix}}
+%       {\usebibmacro{name:given-family}
+%          {\namepartfamily}
+%          {\namepartgiven}
+%          {\namepartprefix}
+%          {\namepartsuffix}}}%
+%     {\iffieldequalstr{hash}{5289973dddf75059ba61ed454afb2799}%% <----- put the correct hash here
+%       {\global\toggletrue{ellipsis}%
+%        \ifgiveninits
+%         {\usebibmacro{name:given-family}
+%            {\namepartfamily}
+%            {\namepartgiveni}
+%            {\namepartprefix}
+%            {\namepartsuffix}}
+%         {\usebibmacro{name:given-family}
+%            {\namepartfamily}
+%            {\namepartgiven}
+%            {\namepartprefix}
+%            {\namepartsuffix}}}%
+%       {\stepcounter{namesnotimportant}%
+%        \iftoggle{ellipsis}
+%          {\addcomma\space\textellipsis\global\togglefalse{ellipsis}\isdot}
+%          {}}}%
+%   \ifnumcomp{\value{namesnotimportant}}{>}{0}
+%     {\global\toggletrue{abx@bool@more\currentname}}
+%     {}%
+%   \ifboolexpr{
+%     test {\ifnumequal{\value{listcount}}{\value{liststop}}}
+%     and
+%     test \ifmorenames
+%   }
+%     {\andothersdelim\bibstring{andothers}}
+%     {}}
+
+% \DeclareNameAlias{sortname}{given-family-etal}
+% \DeclareNameAlias{author}{given-family-etal}
+% \DeclareNameAlias{editor}{given-family-etal}
+% \DeclareNameAlias{translator}{given-family-etal}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 % personal data
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+% TODO: add socials for orcid, google scholar, etc
+% TODO: sync up with upstream (https://github.com/moderncv/moderncv/)
 \firstname{Trevor}
 \familyname{Vannoy}
 %\title{}
@@ -108,8 +173,9 @@
 %\mobile{}
 %\phone{phone number}
 %\fax{fax number}
-\email{vannoy.trevor@gmail.com}
+\email{trevorvannoy@montana.edu}
 \social[github]{tvannoy}
+% \social[googlescholar]
 %\extrainfo{additional information}
 % \photo[64pt][0.4pt]{picture}
 %\quote{some quote}
@@ -126,7 +192,7 @@
 
 \cventry{Aug 2017\,--\,Present}{PhD Electrical Engineering}{Montana State University}{Bozeman, MT}{}{}
 
-\cventry{Aug 2017\,--\,Present}{M.S Electrical Engineering}{Montana State University}{Bozeman, MT}{}{Thesis: \emph{Enabling Rapid Prototyping of Audio Signal Processing Systems using System-on-Chip Field Programmable Gate Arrays}}
+\cventry{Aug 2017\,--\,May 2020}{M.S Electrical Engineering}{Montana State University}{Bozeman, MT}{}{Thesis: \emph{Enabling Rapid Prototyping of Audio Signal Processing Systems using System-on-Chip Field Programmable Gate Arrays}}
 
 \cventry{Aug 2012\,--\,May 2016}{B.S. Electrical Engineering}{Montana State University}{Bozeman, MT}{}{Computer Engineering minor, 4.0 GPA, Highest Honors}
 
@@ -166,7 +232,7 @@
 
 \cventry{Aug 2018\,--\,Present}{Graduate Teaching Assistant}{Montana State University}{Bozeman, MT}{}{}
 \cvlistdoubleitem{SoC FPGAs I}{Digital Signal Processing}
-\cvlistdoubleitem{SoC FPGA II}{Circuits II}
+\cvlistdoubleitem{SoC FPGAs II}{Circuits II}
 
 \cventry{Aug 2015\,--\,May 2016}{Undergrad Teaching Assistant}{Montana State University}{Bozeman, MT}{}{}
 \cvlistitem{Introduction to Electrical Engineering}
@@ -174,13 +240,14 @@
 
 % publications
 \nocite{*}
-\printbibliography[title=Publications]
+\printbibliography[category=conference-publications, title={Conference Publications}]
+\printbibliography[category=conference-abstracts, title={Conference Abstracts}]
 
 
 \section{Service}
 \cvitem{2019\,--\,2020}{Senior Design team advisor}
-\cvitem{2020\,--\,2018, 2016}{Montana FIRST LEGO League Robotics volunteer}
-\cvitem{2019, 2018}{Montana Science Olympiad event captain}
+\cvitem{2021\,--\,2018, 2016}{Montana FIRST LEGO League Robotics volunteer}
+\cvitem{2021, 2019, 2018}{Montana Science Olympiad event captain}
 \cvitem{2018}{Presenter for Belgrade Library's youth summer program}
 \cvitem{2018}{Mentor for Belgrade Library's Google CS-First program}
 \cvitem{2020, 2018}{Montana State University Family Science Night volunteer}
@@ -199,9 +266,9 @@
 \cvitem{2012}{Montana University System Honors Scholarship}
 
 
-\section{Skills}
-\cvdoubleitem{\textbf{Programming Languages}}{MATLAB, Python, VHDL, C, C++}{\textbf{PCB Design}}{KiCad, Eagle}
-\cvdoubleitem{\textbf{FPGA Tools}}{Intel Quartus}{}{}
+% \section{Skills}
+% \cvdoubleitem{\textbf{Programming Languages}}{MATLAB, Python, VHDL, C, C++}{\textbf{PCB Design}}{KiCad, Eagle}
+% \cvdoubleitem{\textbf{FPGA Tools}}{Intel Quartus}{}{}
 
 
 \end{document}
