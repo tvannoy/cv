@@ -49,8 +49,10 @@
 \setlength{\biblabelsep}{0pt}
 
 % set up publication categories
+\DeclareBibliographyCategory{journal-publications}
 \DeclareBibliographyCategory{conference-publications}
 \DeclareBibliographyCategory{conference-abstracts}
+\addtocategory{journal-publications}{Vannoy2021}
 \addtocategory{conference-publications}{vannoy2019open, vannoy2019improved, vannoy2020design}
 \addtocategory{conference-abstracts}{snider2019real, snider2020implementing, blunt2020real}
 
@@ -240,6 +242,7 @@
 
 % publications
 \nocite{*}
+\printbibliography[category=journal-publications, title={Journal Publications}]
 \printbibliography[category=conference-publications, title={Conference Publications}]
 \printbibliography[category=conference-abstracts, title={Conference Abstracts}]
 
