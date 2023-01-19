@@ -4,7 +4,9 @@
 \documentclass[11pt,letterpaper,roman,english]{moderncv}
 
 \usepackage[utf8]{inputenc}
-\usepackage[scale=0.75]{geometry}
+\usepackage[margin=1in]{geometry}
+\recomputelengths
+
 \usepackage{babel}
 \usepackage{csquotes}
 
@@ -203,29 +205,32 @@
 
 \section{Research Experience}
 
-\cventry{May 2020\,--\,Present}{Graduate Research Assistant}{Montana State University}{Bozeman, MT}{}{}
-\cvlistitem{Object detection with airborne lidar}
+\cventry{May 2020\,--\,Present}{Graduate Research Assistant}{Montana State University}{Bozeman, MT}{}{Detecting objects in pulsed lidar images using machine learning}
+\cvlistitem{Drone propeller rotation analysis}
+\cvlistitem{Insect detection using supervised machine learning}
+\cvlistitem{Fish detection using supervised machine learning}
 
-\cventry{Aug 2017\,--\,May 2019}{Graduate Research Assistant}{Montana State University}{Bozeman, MT}{}{}
-\cvlistitem{Development of an Open FPGA-based Speech Processing Platform}
+\cventry{Aug 2017\,--\,May 2019}{Graduate Research Assistant}{Montana State University}{Bozeman, MT}{}{\href{https://github.com/fpga-open-speec-tools/}{Development of an open source FPGA-based speech processing platform \faGithub}}
+\cvlistitem{Developed code generation and workflow automation scripts to reduce development time}
+\cvlistitem{Created scripts for building an embedded Linux root filesystem}
+\cvlistitem{Developed a system to program an FPGA during runtime using bitstreams hosted on Amazon Web Services}
 
-\cventry{Aug 2015\,--\,May 2016}{Undergrad Research Assistant}{Montana State University}{Bozeman, MT}{}{}
-\cvlistitem{Development of an FPGA Platform for Automating Laboratory Equipment}
+\cventry{Aug 2015\,--\,May 2016}{Undergrad Research Assistant}{Montana State University}{Bozeman, MT}{}{Development of an SoC FPGA-based gantry robot controller}
 
-\cventry{June\,--\,Aug 2015}{Lee Teng Research Intern}{Argonne National Lab}{Lemont, IL}{}{}
-\cvlistitem{Control system modeling and stability analysis of an adaptive noise suppression system for the Advanced Photon Source particle accelerator}
+\cventry{June\,--\,Aug 2015}{Lee Teng Research Intern}{Argonne National Lab}{Lemont, IL}{}{Control system modeling and stability analysis of an adaptive noise suppression system for the Advanced Photon Source particle accelerator}
 
 
-\section{Work Experience}
+\section{Industry Experience}
 
 \cventry{May 2019\,--\,Aug 2020}{Engineer}{SensorLogic}{Bozeman, MT}{}{}
 \cvlistitem{SoC FPGA and microcontroller development}
 \cvlistitem{Audio and radar signal processing}
-\cvlistitem{Linux server administration}
+% \cvlistitem{Linux server administration}
 
 \cventry{June 2016\,--\,July 2017}{Embedded Software Engineer}{Fluke Calibration}{Everett, WA}{}{}
 \cvlistitem{Developed a graphical application in Python to aid hardware bring-up}
-\cvlistitem{Designed and wrote firmware in C++ for a multifunction electrical calibrator}
+\cvlistitem{Designed C++ firmware for controlling analog and digital hardware in a multifunction electrical calibrator}
+\cvlistitem{Wrote code for inter-processor communication using TCP/IP sockets on the \({\mu}\)C/OS RTOS}
 
 \cventry{May\,--\,Aug 2014}{Engineering Intern}{Western Area Power Administration}{Billings, MT}{}{}
 \cvlistitem{Developed statistical data analysis software in Microsoft Excel VBA and Python to compare power system model parameters with historical data}
@@ -252,14 +257,18 @@
 \printbibliography[category=conference-publications, title={Conference Publications}]
 \printbibliography[category=conference-abstracts, title={Conference Abstracts}]
 
+\section{Skills}
+% \cvdoubleitem{\textbf{Programming Languages}}{MATLAB, Python, VHDL, C, C++}{\textbf{PCB Design}}{KiCad, Eagle}
+% \cvdoubleitem{\textbf{FPGA Tools}}{Intel Quartus}{}{}
+\cvcomputer{\textbf{Programming Languages}}{MATLAB, Python, VHDL, C, C++, Bash}{\textbf{PCB Design}}{KiCad, Eagle}
 
 \section{Service}
 \cvitem{2019\,--\,2020}{Senior Design team advisor}
-\cvitem{2021\,--\,2018, 2016}{Montana FIRST LEGO League Robotics volunteer}
-\cvitem{2021, 2019, 2018}{Montana Science Olympiad event captain}
+\cvitem{2016, 2018\,--\,2022}{Montana FIRST LEGO League Robotics volunteer}
+\cvitem{2018\,--\,2022}{Montana Science Olympiad event captain}
 \cvitem{2018}{Presenter for Belgrade Library's youth summer program}
 \cvitem{2018}{Mentor for Belgrade Library's Google CS-First program}
-\cvitem{2020, 2018}{Montana State University Family Science Night volunteer}
+\cvitem{2018, 2022}{Montana State University Family Science Night volunteer}
 \cvitem{2017}{Montana Science Olympiad volunteer}
 
 \section{Honors and Awards}
@@ -270,14 +279,9 @@
 \cvitem{2016}{Outstanding Senior in Electrical and Computer Engineering}
 \cvitem{2015}{Outstanding Junior in Electrical and Computer Engineering}
 \cvitem{2015}{Kathryn S. \& Walter L. Titus Jr. Memorial Scholarship}
-\cvitem{2014, 2013}{Len G. Robbins Memorial Scholarship}
+\cvitem{2013, 2014}{Len G. Robbins Memorial Scholarship}
 \cvitem{2013}{NorthWestern Energy Community Works Scholarship}
 \cvitem{2012}{Montana University System Honors Scholarship}
-
-
-% \section{Skills}
-% \cvdoubleitem{\textbf{Programming Languages}}{MATLAB, Python, VHDL, C, C++}{\textbf{PCB Design}}{KiCad, Eagle}
-% \cvdoubleitem{\textbf{FPGA Tools}}{Intel Quartus}{}{}
 
 
 \end{document}
