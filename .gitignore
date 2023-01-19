@@ -13,3 +13,5 @@
 *.bib.blg
 *.dvi
 build
+cv.pdf
+*.sav
