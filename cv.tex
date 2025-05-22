@@ -132,6 +132,9 @@
 {\textbf{#1}}
 {#1}}
 
+% Github links are added in the addendum field of bib entries. This formats the repo urls.
+\DeclareFieldFormat{addendum}{{\\\href{#1}{\faGithub \addnbspace #1}}}
+
 % always show my name
 % taken from https://tex.stackexchange.com/questions/341313/biblatex-always-show-a-specific-author
 % \newcounter{namesnotimportant}
