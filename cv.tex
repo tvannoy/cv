@@ -135,60 +135,6 @@
 % Github links are added in the addendum field of bib entries. This formats the repo urls.
 \DeclareFieldFormat{addendum}{{\\\href{#1}{\faGithub \addnbspace #1}}}
 
-% always show my name
-% taken from https://tex.stackexchange.com/questions/341313/biblatex-always-show-a-specific-author
-% \newcounter{namesnotimportant}
-% \newtoggle{ellipsis}
-% \DeclareNameFormat{given-family-etal}{%
-%   \ifnumcomp{\value{listcount}}{=}{1}
-%     {\setcounter{namesnotimportant}{0}%
-%      \global\toggletrue{ellipsis}}
-%     {}%
-%   \ifboolexpr{test {\ifnumcomp{\value{listcount}}{=}{1}}
-%               or test {\ifnumcomp{\value{listtotal}}{=}{2}}}
-%     {\ifgiveninits
-%       {\usebibmacro{name:given-family}
-%          {\namepartfamily}
-%          {\namepartgiveni}
-%          {\namepartprefix}
-%          {\namepartsuffix}}
-%       {\usebibmacro{name:given-family}
-%          {\namepartfamily}
-%          {\namepartgiven}
-%          {\namepartprefix}
-%          {\namepartsuffix}}}%
-%     {\iffieldequalstr{hash}{5289973dddf75059ba61ed454afb2799}%% <----- put the correct hash here
-%       {\global\toggletrue{ellipsis}%
-%        \ifgiveninits
-%         {\usebibmacro{name:given-family}
-%            {\namepartfamily}
-%            {\namepartgiveni}
-%            {\namepartprefix}
-%            {\namepartsuffix}}
-%         {\usebibmacro{name:given-family}
-%            {\namepartfamily}
-%            {\namepartgiven}
-%            {\namepartprefix}
-%            {\namepartsuffix}}}%
-%       {\stepcounter{namesnotimportant}%
-%        \iftoggle{ellipsis}
-%          {\addcomma\space\textellipsis\global\togglefalse{ellipsis}\isdot}
-%          {}}}%
-%   \ifnumcomp{\value{namesnotimportant}}{>}{0}
-%     {\global\toggletrue{abx@bool@more\currentname}}
-%     {}%
-%   \ifboolexpr{
-%     test {\ifnumequal{\value{listcount}}{\value{liststop}}}
-%     and
-%     test \ifmorenames
-%   }
-%     {\andothersdelim\bibstring{andothers}}
-%     {}}
-
-% \DeclareNameAlias{sortname}{given-family-etal}
-% \DeclareNameAlias{author}{given-family-etal}
-% \DeclareNameAlias{editor}{given-family-etal}
-% \DeclareNameAlias{translator}{given-family-etal}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
